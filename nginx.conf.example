@@ -1,5 +1,6 @@
 server {
     listen 80;
     server_name  webdriver-cdn.domain.com;
+    limit_rate 10m;
     root /home/username/webdriverCDN/downloaded/;
 }
