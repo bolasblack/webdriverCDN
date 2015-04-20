@@ -4,7 +4,15 @@
 
 嗯，需要自己部署。
 
-然后可以每个小时跑一次：
+## Usage
+
+```bash
+webdriver-manager update --alternate_cdn=http://webdriver-cdn.domain.com/
+```
+
+## crontab
+
+可以每个小时跑一次：
 
 ```crontab
 0 * * * * /usr/bin/ruby $HOME/webdriverCDN/main.rb >> $HOME/webdriverCDN/crontab.log
