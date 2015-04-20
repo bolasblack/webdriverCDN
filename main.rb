@@ -38,7 +38,7 @@ fail 'Request version data failed' unless 200 <= resp.code.to_i || resp.code.to_
 versions = JSON.parse(resp.body)['webdriverVersions']
 urls.map do |name, fn|
   current_version = versions[name.to_s]
-  path = File.join(download_path, current_version)
+  path = File.join(download_path, current_version.short)
   fn.call(current_version).map { |url| {url: url, path: path} }
 end.compact.flatten.each do |info|
   FileUtils.mkdir_p info[:path]
